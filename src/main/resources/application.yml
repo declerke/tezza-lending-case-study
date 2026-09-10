@@ -1,0 +1,50 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: lending-app
+
+  datasource:
+    url: jdbc:h2:file:./data/lendingdb;DB_CLOSE_ON_EXIT=FALSE
+    driver-class-name: org.h2.Driver
+    username: sa
+    password: ""
+
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    show-sql: false
+    properties:
+      hibernate:
+        format_sql: true
+    open-in-view: false
+    defer-datasource-initialization: false
+
+  sql:
+    init:
+      mode: always
+      schema-locations: classpath:database/ddl/create/001_create_schema.sql
+      data-locations: classpath:database/seed/001_reference_data.sql,classpath:database/seed/002_demo_data.sql
+      continue-on-error: false
+
+springdoc:
+  api-docs:
+    path: /api-docs
+  swagger-ui:
+    path: /swagger-ui.html
+
+lending:
+  sweep-job:
+    cron: "0 0 1 * * *"
+  notifications:
+    due-soon-reminder-days: 1
+
+logging:
+  level:
+    com.example.lending: INFO
