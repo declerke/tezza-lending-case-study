@@ -1,0 +1,18 @@
+# IntelliJ IDEA project metadata
+.idea/
+*.iml
+
+# Maven and local dependency/build output
+target/
+.m2-repository/
+.maven-home/
+
+# Local H2 runtime state
+data/
+
+# Rendered/intermediate working files
+tmp/
+
+# Personal project notes and source assignment copy
+projectsummary.md
+Interview Case Study-Tezza (3).pdf
