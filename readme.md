@@ -84,7 +84,7 @@ flowchart TB
 
 ---
 
-## 📖 API Documentation
+## 📸 API Documentation
 
 The complete contract is available through Swagger UI after startup:
 
@@ -93,6 +93,24 @@ The complete contract is available through Swagger UI after startup:
 - H2 console: `http://localhost:8080/h2-console` (local development only)
 
 The seeded reference data uses products `1`-`3` and customers `1`-`3` on a fresh database. IDs may differ for records created during local exploration.
+
+### Swagger UI and OpenAPI reference
+
+![Swagger UI notification API overview](assets/swagger-overview.png)
+
+*Swagger UI loaded from the local application against the `/api-docs` definition, with notification-controller operations visible.*
+
+![Swagger UI product and loan lifecycle endpoints](assets/swagger-product-loan.png)
+
+*Product configuration and loan lifecycle operations exposed through the REST contract, including creation, disbursement, repayment, cancellation, and write-off.*
+
+![Swagger UI customer notification preference form](assets/swagger-customer-notifications.png)
+
+*Interactive DTO-backed request form for updating a customer's preferred notification channel.*
+
+![Machine-readable OpenAPI contract](assets/openapi-contract.png)
+
+*Raw OpenAPI 3.0 JSON returned by `/api-docs`, suitable for tooling, client generation, and contract inspection.*
 
 ### Create a product with an installment schedule
 
@@ -238,6 +256,11 @@ HTTP error contracts are consistent: `400` validation/malformed requests, `404` 
 
 ```text
 lending-app/
+├── assets/                             # README API documentation screenshots
+│   ├── openapi-contract.png            # Machine-readable OpenAPI JSON view
+│   ├── swagger-customer-notifications.png # Customer notification preference view
+│   ├── swagger-overview.png            # Swagger UI reference view
+│   └── swagger-product-loan.png        # Product and loan lifecycle views
 ├── .mvn/wrapper/                       # Maven Wrapper configuration
 ├── mvnw                                # Unix/macOS Maven Wrapper entry point
 ├── mvnw.cmd                            # Windows Maven Wrapper entry point
