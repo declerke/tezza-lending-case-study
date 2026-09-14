@@ -423,7 +423,3 @@ The final verification baseline is **71 tests, 0 failures, 0 errors, and 0 skips
 - **Engineering judgement:** kept the assignment portable and explainable while documenting the production evolution path for PostgreSQL, migrations, brokers, real providers, and authentication.
 
 ---
-
-## 📌 Submission Notes
-
-The Git history records the finalization process in focused commits: repository hygiene, installment validation, documentation, and reproducibility setup. `projectsummary.md` remains available locally as personal working context but is excluded from the submitted Git history.
